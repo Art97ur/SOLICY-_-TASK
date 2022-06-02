@@ -1,22 +1,22 @@
 import "./styles.css";
-export const Header = ({ card, setCard }) => {
-  
+export const Header = ({ tasks, setTasks }) => {
   const onAdd = () => {
     let newCard = [
-      ...card,
-    {
-      title: Math.floor(Math.random() * 999),
-      id: Math.random(),
-    },
-  ]
-    setCard(
-      newCard
-    );
-    console.log(card,"card");
+      ...tasks,
+      {
+        title: Math.floor(Math.random() * 999),
+        id: Math.random(),
+      },
+    ];
+    setTasks(newCard);
     localStorage.setItem("cards", JSON.stringify(newCard));
   };
   const onSort = () => {
-    setCard([...card.sort((a, b) => a.title - b.title)]);
+    setTasks([...tasks.sort((a, b) => a.title - b.title)]);
+    localStorage.setItem(
+      "cards",
+      JSON.stringify([...tasks.sort((a, b) => a.title - b.title)])
+    );
   };
 
   return (
@@ -30,18 +30,3 @@ export const Header = ({ card, setCard }) => {
     </header>
   );
 };
-
-
-
-
-// setCard((prev)=>{
-//   // console.log(prev); 
-//   return [
-
-//   ...prev,
-//   {
-//     title: Math.floor(Math.random() * 999),
-//      id: Math.random(),
-//   }
-// ]
-// });
