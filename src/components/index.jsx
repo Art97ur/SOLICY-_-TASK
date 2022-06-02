@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { Aside } from "../Aside"
 import { Section } from "../Section"
-import { CARD_DATA } from "./consts"
 import "./styles.css"
 export const Project = ({card,setCard,onDelete})=>{
     

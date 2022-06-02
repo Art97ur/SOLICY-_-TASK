@@ -6,8 +6,8 @@ export const Section = ({card,setCard,onDelete}) =>{
     
     return (
         <section className="section">
-            {card.map((item,index)=>{
-                return <CardComponent key={index} title={item.title}card ={card} onDelete={onDelete}/>
+            {card.map((todo,index)=>{
+                return <CardComponent key={index} title={todo.title} card ={card} onDelete={onDelete} todo={todo}/>
             })}
         </section>
     )
